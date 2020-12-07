@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :mocktails, only: [:index, :show, :update, :edit]
       resources :favorites
-      resources :users, only: [:new, :create]
+      resources :users, only: [:index, :new, :create]
     end
   end
 

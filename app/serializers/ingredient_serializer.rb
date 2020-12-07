@@ -1,4 +1,4 @@
 class IngredientSerializer < ActiveModel::Serializer
-    attributes :id, :name, :measurement
+    attributes :id, :name, :measurement, :mocktail_id
 end
   
