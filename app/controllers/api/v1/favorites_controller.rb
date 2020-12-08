@@ -9,9 +9,16 @@ class Api::V1::FavoritesController < ApplicationController
         favorite = Favorite.all
         render json: favorite
     end
-    
+
     def create
         favorite = Favorite.create(favorite_params)
+        render json: favorite
+    end
+
+    def destroy 
+        favorite_array = params[:id].split(",")
+        favorite = Favorite.find_by(user_id: favorite_array[0], mocktail_id: favorite_array[1])
+        favorite.delete
         render json: favorite
     end
 
